@@ -1,6 +1,7 @@
 import random
 from ascii_art import STAGES
 
+
 # List of secret words
 WORDS = ["python", "git", "github", "snowman", "meltdown"]
 
@@ -11,6 +12,11 @@ def get_random_word():
 
 
 def display_game_state(mistakes, secret_word, guessed_letters):
+
+    # Display game over message
+    if mistakes >= 3:
+        print(STAGES[mistakes])
+        return
     # Display the snowman stage for the current number of mistakes.
     print(STAGES[mistakes])
     # Build a display version of the secret word.
@@ -33,7 +39,14 @@ def play_game():
     while True:
         # Display game state.
         display_game_state(mistakes, secret_word, guessed_letters)
-
+        # Display Game over message
+        if mistakes >= 3:
+            print(f"Game Over! The word was: {secret_word}")
+            break
+        # Check if the player has won
+        if set(secret_word).issubset(guessed_letters):
+            print("Congratulations, you saved the snowman!")
+            break
         # Prompt user for one guess (logic to be enhanced later)
         guess = input("Guess a letter: ").lower()
         guessed_letters.append(guess)
