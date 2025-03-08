@@ -43,12 +43,19 @@ def play_game():
         if mistakes >= 3:
             print(f"Game Over! The word was: {secret_word}")
             break
+
         # Check if the player has won
         if set(secret_word).issubset(guessed_letters):
             print("Congratulations, you saved the snowman!")
             break
+
         # Prompt user for one guess (logic to be enhanced later)
         guess = input("Guess a letter: ").lower()
+        # Input validation
+        if len(guess) != 1 or not guess.isalpha():
+            print("Invalid input. Please enter a single letter.")
+            continue
+
         guessed_letters.append(guess)
         if guess not in secret_word:
             mistakes += 1
