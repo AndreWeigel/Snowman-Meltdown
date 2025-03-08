@@ -1,4 +1,5 @@
 import random
+import ascii_art
 
 # List of secret words
 WORDS = ["python", "git", "github", "snowman", "meltdown"]
