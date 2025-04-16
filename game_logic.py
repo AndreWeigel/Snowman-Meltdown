@@ -27,7 +27,9 @@ def display_game_state(mistakes, secret_word, guessed_letters):
         else:
             display_word += "_ "
     print("Word: ", display_word)
-    print("\n")
+    print()
+    print("Guessed Letters: ", ', '.join(sorted(set(guessed_letters))))
+    print()
 
 
 def play_game():
