@@ -8,7 +8,7 @@ WORDS = ["python", "git", "github", "snowman", "meltdown"]
 
 def get_random_word():
     """Selects a random word from the list."""
-    return WORDS[random.randint(0, len(WORDS) - 1)]
+    return random.choice(WORDS)
 
 
 def display_game_state(mistakes, secret_word, guessed_letters):
