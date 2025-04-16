@@ -1,7 +1,7 @@
 from game_logic import play_game
 
 
-if __name__ == "__main__":
+def main():
     while True:
         play_game()
         # Ask if the player wants to play again
@@ -9,3 +9,7 @@ if __name__ == "__main__":
         if replay == "n":
             print("Thanks for playing!")
             break
+
+
+if __name__ == "__main__":
+    main()
